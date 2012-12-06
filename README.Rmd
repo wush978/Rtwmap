@@ -1,0 +1,30 @@
+# Rtwmap
+
+```{r setup}
+library(Rtwmap)
+```
+
+```{r village2010}
+data(village2010)
+plot(village2010)
+```
+
+```{r county1984}
+data(county1984)
+plot(county1984)
+```
+
+```{r county2010}
+data(county2010)
+plot(county2010)
+```
+
+```{r town1984}
+data(town1984)
+plot(town1984)
+```
+
+```{r town2010}
+data(town2010)
+plot(town2010)
+```
