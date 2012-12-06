@@ -1,5 +1,7 @@
 # Rtwmap
 
+## Plot Data
+
 ```{r setup}
 library(Rtwmap)
 ```
@@ -27,4 +29,28 @@ plot(town1984)
 ```{r town2010}
 data(town2010)
 plot(town2010)
+```
+
+## Coloring
+
+隨機顏色
+
+```{r county1984-color}
+data(county1984)
+random.color <- as.factor(sample(1:3, length(county1984), TRUE))
+color <- rainbow(3)
+county1984$random.color <- random.color
+spplot(county1984, "random.color", col.regions=color, main="Taiwan Random Color")
+```
+
+[人口](http://zh.wikipedia.org/wiki/%E8%87%BA%E7%81%A3%E8%A1%8C%E6%94%BF%E5%8D%80%E4%BA%BA%E5%8F%A3%E5%88%97%E8%A1%A8)
+
+```{r population}
+population <- read.csv("population.csv", sep="\t", header=FALSE)
+data(county2010)
+rownames(population) <- as.character(population$V2)
+population <- population[as.character(county2010$county),"V4"]
+col <- heat.colors(max(population))[max(population):1]
+county2010$population <- population
+spplot(county2010, "population", col.regions=col, main="Population of Taiwan")
 ```
