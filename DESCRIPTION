@@ -8,6 +8,7 @@ Maintainer: Wush Wu <wush.978@gmail.com>
 Description: SpatialPolygonsDataFrame of Taiwan maps
 License: GPL (>= 2)
 Depends:
+    R (>= 2.10),
     sp
 Collate:
     'Rtwmap-data.R'
