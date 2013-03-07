@@ -2,6 +2,10 @@
 
 ## Install
 
+[Windows Binary](http://tw_use_r.bitbucket.org/packages/Rtwmap_1.0.zip)
+
+Source:
+
 ```r
 library(devtools)
 install_github("Rtwmap", "wush978")
